@@ -10,7 +10,7 @@ canvas { border: 1px solid grey; }
     </style>
   </head>
   <body>
-    <canvas>
+    <canvas width="500" height="300">
       Alternate Text
     </canvas>
 
@@ -20,10 +20,13 @@ const draw = () => {
   if (canvas.getContext) {
     const ctx = canvas.getContext('2d');
     
-    ctx.fillStyle = 'rgb(200, 0, 0)';
-    ctx.fillRect(10, 10, 50, 50);
-    ctx.fillStyle = 'rgb(0, 0, 200, 0.5)';
-    ctx.fillRect(30, 30, 50, 50);
+    ctx.fillRect(25, 25, 100, 100);
+    ctx.clearRect(45, 45, 60, 60);
+    ctx.strokeRect(50, 50, 50, 50);
+
+    ctx.beginPath();
+    ctx.arc(250, 75, 50, 0, Math.PI * 2, true);
+    ctx.stroke();
   }
 };
 
